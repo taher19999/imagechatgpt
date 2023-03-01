@@ -1,0 +1,11 @@
+services:
+  bot:
+    env:
+      BOT_TOKEN: ${{SECRET.BOT_TOKEN}}
+      OPENAI_API_KEY: ${{SECRET.OPENAI_API_KEY}}
+    image: python:3.8-slim
+    build:
+      context: .
+    command: python bot.py
+    ports:
+      - 8080
